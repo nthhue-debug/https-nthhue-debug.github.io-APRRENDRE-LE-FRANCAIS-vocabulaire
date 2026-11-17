@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voyage en français</title>
+
+<style>
+:root {
+  --vert: #728B62;
+  --vert-clair: #B5C7A3;
+  --beige: #E9D9B8;
+  --creme: #FAF7EE;
+  --fonce: #374A36;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--creme);
+  color: var(--fonce);
+  line-height: 1.7;
+}
+
+header {
+  background: var(--fonce);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: var(--vert-clair);
+  padding: 15px;
+}
+
+nav a {
+  color: var(--fonce);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background: linear-gradient(135deg, #B5C7A3, #E9D9B8);
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px;
+}
+
+section {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 25px 0;
+  box-shadow: 0 4px 12px #374A3615;
+}
+
+h2 {
+  border-bottom: 3px solid var(--vert-clair);
+  padding-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 15px;
+  background: var(--vert-clair);
+  text-align: center;
+}
+
+.card:nth-child(even) {
+  background: var(--beige);
+}
+
+.card a {
+  color: var(--fonce);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.emoji {
+  font-size: 42px;
+}
+
+button {
+  background: var(--fonce);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+button:hover {
+  background: #52694C;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: var(--fonce);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #FAF7EE;
+}
+
+.dialogue, .activite {
+  background: var(--creme);
+  padding: 20px;
+  border-left: 5px solid var(--vert);
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.quiz-question {
+  background: var(--creme);
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin: 7px 0;
+  cursor: pointer;
+}
+
+#resultat {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#chat {
+  background: var(--creme);
+  border: 1px solid var(--vert-clair);
+  border-radius: 12px;
+  min-height: 220px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.message {
+  background: var(--vert-clair);
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.utilisateur {
+  background: var(--beige);
+}
+
+input[type="text"] {
+  padding: 13px;
+  width: 100%;
+  border: 1px solid var(--vert);
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+footer {
+  background: var(--fonce);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  section {
+    padding: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>🌿 Voyage en français</h2>
+  <p>Université de Hué – Département de français et de russe</p>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#vocabulaire">Vocabulaire</a>
+  <a href="#communication">Communication</a>
+  <a href="#patrimoine">Patrimoine</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#assistant">Mon coach FOS</a>
+</nav>
+
+<div class="hero" id="accueil">
+  <h1>Voyage en français</h1>
+  <p>Découvrir, apprendre et pratiquer le français du tourisme</p>
+  <p>🎓 Niveau B1–B2 | Français professionnel</p>
+  <a href="#rubriques">
+    <button>Commencer à apprendre</button>
+  </a>
+</div>
+
+<main>
+
+<section id="rubriques">
+  <h2>Bienvenue sur votre espace pédagogique</h2>
+  <p>
+    Développez vos compétences linguistiques et professionnelles
+    à travers des activités interactives consacrées au tourisme
+    et au patrimoine culturel de Hué.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="emoji">📚</div>
+      <h3>Le vocabulaire</h3>
+      <p>Apprendre les mots du tourisme.</p>
+      <a href="#vocabulaire">Découvrir →</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🗣️</div>
+      <h3>Communication</h3>
+      <p>Communiquer avec les touristes francophones.</p>
+      <a href="#communication">Pratiquer →</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🏯</div>
+      <h3>Patrimoine de Hué</h3>
+      <p>Découvrir et présenter les monuments.</p>
+      <a href="#patrimoine">Explorer →</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🏆</div>
+      <h3>Quiz et exercices</h3>
+      <p>Tester vos connaissances.</p>
+      <a href="#quiz">S'entraîner →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="vocabulaire">
+
+  <h2>📚 Rubrique 1 – Le vocabulaire du tourisme</h2>
+
+  <p>Apprenez le vocabulaire professionnel essentiel.</p>
+
+  <table>
+    <tr>
+      <th>Français</th>
+      <th>Vietnamien</th>
+    </tr>
+    <tr><td>Un guide touristique</td><td>Hướng dẫn viên du lịch</td></tr>
+    <tr><td>Une réservation</td><td>Việc đặt chỗ</td></tr>
+    <tr><td>Un hébergement</td><td>Chỗ lưu trú</td></tr>
+    <tr><td>Un itinéraire</td><td>Lộ trình</td></tr>
+    <tr><td>Une excursion</td><td>Chuyến tham quan</td></tr>
+    <tr><td>Le patrimoine culturel</td><td>Di sản văn hóa</td></tr>
+    <tr><td>Un séjour</td><td>Kỳ lưu trú</td></tr>
+    <tr><td>Un circuit touristique</td><td>Chương trình du lịch</td></tr>
+    <tr><td>Une visite guidée</td><td>Chuyến tham quan có hướng dẫn</td></tr>
+    <tr><td>Un monument historique</td><td>Di tích lịch sử</td></tr>
+  </table>
+
+  <div class="activite">
+    <h3>✏️ Activité de vocabulaire</h3>
+    <p>Complétez la phrase :</p>
+    <p>Pour visiter la Cité impériale, les touristes peuvent participer à une visite __________.</p>
+
+    <input type="text" id="mot" placeholder="Votre réponse">
+
+    <button onclick="verifierMot()">Vérifier</button>
+
+    <p id="correctionMot" aria-live="polite"></p>
+  </div>
+
+</section>
+
+<section id="communication">
+
+  <h2>🗣️ Rubrique 2 – Communiquer en situation professionnelle</h2>
+
+  <h3>Situation 1 : Accueillir des touristes</h3>
+
+  <div class="dialogue">
+    <p><strong>Guide :</strong> Bonjour Mesdames et Messieurs ! Bienvenue à Hué.</p>
+    <p><strong>Touriste :</strong> Bonjour ! Quel est le programme de la journée ?</p>
+    <p><strong>Guide :</strong> Nous allons visiter la Cité impériale ce matin.</p>
+    <p><strong>Touriste :</strong> Combien de temps dure la visite ?</p>
+    <p><strong>Guide :</strong> La visite dure environ deux heures.</p>
+  </div>
+
+  <h3>Situation 2 : À la réception d'un hôtel</h3>
+
+  <div class="dialogue">
+    <p><strong>Réceptionniste :</strong> Bonjour Madame, bienvenue dans notre hôtel.</p>
+    <p><strong>Cliente :</strong> Bonjour, j'ai réservé une chambre double.</p>
+    <p><strong>Réceptionniste :</strong> Puis-je avoir votre passeport, s'il vous plaît ?</p>
+    <p><strong>Cliente :</strong> Oui, bien sûr.</p>
+    <p><strong>Réceptionniste :</strong> Voici votre clé. Je vous souhaite un excellent séjour.</p>
+  </div>
+
+  <div class="activite">
+    <h3>🎭 Jeu de rôle</h3>
+    <p>
+      Vous êtes réceptionniste. Un touriste français arrive
+      à votre hôtel et souhaite obtenir des informations
+      sur les sites touristiques de Hué.
+    </p>
+    <p>Préparez un dialogue avec votre partenaire.</p>
+  </div>
+
+</section>
+
+<section id="patrimoine">
+
+  <h2>🏯 Rubrique 3 – Découvrir le patrimoine de Hué</h2>
+
+  <h3>La Cité impériale de Hué</h3>
+
+  <p>
+    Située au centre du Vietnam, Hué est l'ancienne capitale
+    impériale de la dynastie des Nguyễn, qui a régné de 1802
+    à 1945. L'ensemble des monuments de Hué est inscrit
+    sur la Liste du patrimoine mondial de l'UNESCO depuis 1993.
+  </p>
+
+  <h3>Les sites incontournables</h3>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="emoji">🏯</div>
+      <h3>La Cité impériale</h3>
+      <p>Un ensemble architectural remarquable.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">⛩️</div>
+      <h3>La pagode de la Dame céleste</h3>
+      <p>Un monument religieux emblématique de Hué.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🌳</div>
+      <h3>Le tombeau de Minh Mang</h3>
+      <p>Un exemple d'harmonie entre architecture et nature.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🚣</div>
+      <h3>La rivière des Parfums</h3>
+      <p>Un symbole de la ville de Hué.</p>
+    </div>
+
+  </div>
+
+  <p>
+    <a href="https://whc.unesco.org/fr/list/678/"
+       target="_blank" rel="noopener">
+       Découvrir le patrimoine de Hué sur le site de l'UNESCO
+    </a>
+  </p>
+
+  <div class="activite">
+    <h3>🎤 Mission : devenez guide touristique !</h3>
+    <p>
+      Choisissez un monument de Hué et préparez une présentation
+      orale de trois minutes.
+    </p>
+    <p>
+      Présentez sa localisation, son histoire, son architecture
+      et son intérêt touristique.
+    </p>
+  </div>
+
+</section>
+
+<section id="quiz">
+
+  <h2>🏆 Rubrique 4 – Quiz et exercices</h2>
+
+  <p>Choisissez la bonne réponse.</p>
+
+  <div class="quiz-question">
+    <strong>1. Quelle ancienne capitale impériale se trouve au centre du Vietnam ?</strong>
+    <label><input type="radio" name="q1" value="0"> Hanoi</label>
+    <label><input type="radio" name="q1" value="1"> Hué</label>
+    <label><input type="radio" name="q1" value="0"> Da Nang</label>
+  </div>
+
+  <div class="quiz-question">
+    <strong>2. En quelle année les monuments de Hué ont-ils été inscrits au patrimoine mondial ?</strong>
+    <label><input type="radio" name="q2" value="0"> 1985</label>
+    <label><input type="radio" name="q2" value="1"> 1993</label>
+    <label><input type="radio" name="q2" value="0"> 2005</label>
+  </div>
+
+  <div class="quiz-question">
+    <strong>3. Quel professionnel accompagne les touristes pendant une visite ?</strong>
+    <label><input type="radio" name="q3" value="0"> Un cuisinier</label>
+    <label><input type="radio" name="q3" value="0"> Un réceptionniste</label>
+    <label><input type="radio" name="q3" value="1"> Un guide touristique</label>
+  </div>
+
+  <div class="quiz-question">
+    <strong>4. Que signifie « une réservation » ?</strong>
+    <label><input type="radio" name="q4" value="1"> Việc đặt chỗ</label>
+    <label><input type="radio" name="q4" value="0"> Chuyến tham quan</label>
+    <label><input type="radio" name="q4" value="0"> Hành lý</label>
+  </div>
+
+  <div class="quiz-question">
+    <strong>5. Quelle formule est adaptée à l'accueil d'un client ?</strong>
+    <label><input type="radio" name="q5" value="0"> Dépêchez-vous !</label>
+    <label><input type="radio" name="q5" value="1"> Bonjour, bienvenue dans notre hôtel.</label>
+    <label><input type="radio" name="q5" value="0"> Qu'est-ce que tu veux ?</label>
+  </div>
+
+  <button onclick="corrigerQuiz()">Voir mon résultat</button>
+
+  <button onclick="recommencer()">Recommencer</button>
+
+  <p id="resultat" aria-live="polite"></p>
+
+</section>
+
+<section id="assistant">
+
+  <h2>🤖 Mon coach FOS</h2>
+
+  <p>
+    Votre assistant pédagogique interactif pour pratiquer
+    le français du tourisme en autonomie.
+  </p>
+
+  <p><small>
+    Version de démonstration : assistant à réponses prédéfinies,
+    sans connexion à une IA générative.
+  </small></p>
+
+  <div id="chat" aria-live="polite">
+
+    <div class="message">
+      <strong>🤖 Coach FOS :</strong><br>
+      Bonjour ! Je suis ton assistant de français du tourisme.
+      Pose-moi une question sur le vocabulaire, Hué,
+      la réception ou demande-moi un exercice.
+    </div>
+
+  </div>
+
+  <button onclick="questionRapide('Vocabulaire')">
+    Vocabulaire
+  </button>
+
+  <button onclick="questionRapide('Patrimoine de Hué')">
+    Patrimoine
+  </button>
+
+  <button onclick="questionRapide('Exercice')">
+    Exercice
+  </button>
+
+  <button onclick="questionRapide('Indice')">
+    Indice
+  </button>
+
+  <form onsubmit="envoyer(); return false;">
+    <input
+      type="text"
+      id="question"
+      aria-label="Votre question"
+      placeholder="Écrivez votre question ici..."
+    >
+    <button type="submit">Envoyer</button>
+  </form>
+
+</section>
+
+</main>
+
+<footer>
+  <p>🌿 Voyage en français – Apprendre autrement</p>
+  <p>Université de Hué</p>
+  <p>Département de français et de russe</p>
+  <p>Site pédagogique – Français du tourisme</p>
+</footer>
+
+<script>
+
+function verifierMot() {
+
+  const mot = document.getElementById("mot").value.trim().toLowerCase();
+  const correction = document.getElementById("correctionMot");
+
+  if (mot === "guidée" || mot === "guidee") {
+    correction.textContent = "Bravo ! Bonne réponse.";
+  } else {
+    correction.textContent =
+      "Indice : cherchez un adjectif dérivé du verbe guider.";
+  }
+}
+
+function corrigerQuiz() {
+
+  let score = 0;
+  let reponses = 0;
+
+  for (let i = 1; i <= 5; i++) {
+
+    const choix = document.querySelector(
+      'input[name="q' + i + '"]:checked'
+    );
+
+    if (choix) {
+      reponses++;
+      score += Number(choix.value);
+    }
+  }
+
+  const resultat = document.getElementById("resultat");
+
+  if (reponses < 5) {
+    resultat.textContent = "Répondez aux cinq questions.";
+    return;
+  }
+
+  if (score === 5) {
+    resultat.textContent = "🏆 Excellent ! 5/5.";
+  } else if (score >= 3) {
+    resultat.textContent = "👏 Très bien ! " + score + "/5. Continuez !";
+  } else {
+    resultat.textContent = "💪 " + score + "/5. Relisez les leçons et réessayez.";
+  }
+}
+
+function recommencer() {
+
+  document.querySelectorAll('input[type="radio"]').forEach(
+    input => input.checked = false
+  );
+
+  document.getElementById("resultat").textContent = "";
+}
+
+function ajouterMessage(nom, texte, classe) {
+
+  const message = document.createElement("div");
+  message.className = "message " + classe;
+
+  const titre = document.createElement("strong");
+  titre.textContent = nom + " : ";
+
+  message.appendChild(titre);
+  message.appendChild(document.createTextNode(texte));
+
+  const chat = document.getElementById("chat");
+
+  chat.appendChild(message);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function questionRapide(texte) {
+
+  document.getElementById("question").value = texte;
+
+  envoyer();
+}
+
+function envoyer() {
+
+  const champ = document.getElementById("question");
+  const question = champ.value.trim();
+
+  if (!question) return;
+
+  ajouterMessage("Vous", question, "utilisateur");
+
+  const q = question.toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+  let reponse;
+
+  if (q.includes("indice")) {
+
+    reponse = "Relis la leçon et identifie les mots-clés. Quel élément peut t'aider à trouver la réponse ?";
+
+  } else if (q.includes("exercice") || q.includes("quiz")) {
+
+    reponse = "Voici un défi : imagine que tu accueilles un groupe de touristes français à Hué. Quelles sont les trois premières phrases que tu vas prononcer ?";
+
+  } else if (q.includes("vocabulaire")) {
+
+    reponse = "Apprenons trois mots : un itinéraire, une excursion et une réservation. Essaie de créer une phrase avec chacun de ces mots.";
+
+  } else if (q.includes("patrimoine") || q.includes("hue")) {
+
+    reponse = "Hué est une ancienne capitale impériale. Peux-tu citer trois monuments de la ville et expliquer leur intérêt touristique ?";
+
+  } else if (q.includes("hotel") || q.includes("reception")) {
+
+    reponse = "Pour accueillir un client, commence par une formule de politesse. Ensuite, vérifie sa réservation. Imagine maintenant un dialogue de six répliques.";
+
+  } else if (q.includes("guide")) {
+
+    reponse = "Un guide touristique présente les monuments, accompagne les visiteurs et répond à leurs questions. Comment présenterais-tu la Cité impériale en trois phrases ?";
+
+  } else if (q.includes("bonjour")) {
+
+    reponse = "Bonjour ! Prêt à découvrir le français du tourisme ? Choisis une activité.";
+
+  } else if (q.includes("merci")) {
+
+    reponse = "Avec plaisir ! Continue à pratiquer régulièrement.";
+
+  } else {
+
+    reponse = "Je ne dispose pas encore d'une réponse à cette question. Choisis un thème : vocabulaire, patrimoine, hôtel, guide touristique ou exercice.";
+
+  }
+
+  ajouterMessage("🤖 Coach FOS", reponse, "");
+
+  champ.value = "";
+}
+
+</script>
+
+</body>
+</html>
